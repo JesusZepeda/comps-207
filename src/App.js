@@ -1,22 +1,13 @@
-import { useState } from 'react';
-import Dropdown from './components/Dropdown';
+import { useState } from "react";
+import { Slider } from "./Slider";
 
 function App() {
-  const [selection, setSelection] = useState(null);
+  const [age, setAge] = useState(50);
 
-  const handleSelect = (option) => {
-    setSelection(option);
+  const handleAgeChange = (newAge) => {
+    setAge(newAge);
   };
-
-  const options = [
-    { label: 'Red', value: 'red' },
-    { label: 'Green', value: 'green' },
-    { label: 'Blue', value: 'blue' },
-  ];
-
-  return (
-    <Dropdown options={options} value={selection} onChange={handleSelect} />
-  );
+  return <Slider value={age} onChange={handleAgeChange} />;
 }
 
 export default App;
